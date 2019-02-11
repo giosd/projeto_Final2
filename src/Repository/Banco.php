@@ -6,9 +6,9 @@ use App\Entity\Cliente;
 
 class Banco {
 	private function conectaBD() {
-		$host = 'localhost';
+		$host = 'localhost:3310';
 		$user = 'root';
-		$pass = 'senha';
+		$pass = '';
 		$base = 'verao-2019';
 		$banco = new \mysqli($host, $user, $pass, $base);
 		if (\mysqli_connect_errno()) {
@@ -85,6 +85,37 @@ class Banco {
 		return $produtos;
 	}
 
+	public function getProdutosByBusca($desc) {
+		//$nome = trim($desc);
+		$strsql = "select p.* from produtos as p
+		inner join categorias as c on c.id = p.categoria_id
+		where p.nome like '%$desc%' or p.descricao like '%$desc%'";
+
+		$resultados = $this->getResultsBD($strsql);
+	
+		$produto = array();
+		while ($linha = $resultados->fetch_object()) {
+			$produto[] = $this->fetchProduto($linha);
+		}
+
+		return $produto;
+	}
+
+	public function getProdutosAleatorio() {
+		//$nome = trim($desc);
+		$strsql = "select p.* from produtos order by rand() limit 2";
+
+		$resultados = $this->getResultsBD($strsql);
+	
+		$produto = array();
+		while ($linha = $resultados->fetch_object()) {
+			$produto[] = $this->fetchProduto($linha);
+		}
+
+		return $produto;
+	}
+
+	
 	public function login($email, $senha) {
 		$senha = md5($senha);
 		$strsql = "select * from clientes where email = '$email' and senha = '$senha'";

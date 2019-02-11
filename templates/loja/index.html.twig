@@ -8,7 +8,37 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>My Project</title>
+
+    <style>
+.wrapper {
+  display: grid;
+  grid-template-columns: 33% 33% 33% ;
+}
+* {box-sizing: border-box;}
+.wrapper {
+    border: 2px solid #fffff;
+    border-radius: 5px;
+    background-color: #fffff;
+}
+.wrapper > div {
+    border: 1px solid #D3D3D3;
+    border-radius: 1px;
+    background-color: #ffffff;
+    padding: 1em;
+    color: #000000;
+    MARGIN-right:30PX;
+   MARGIN-TOP:30PX;
+}
+.nested {
+    border: 2px solid #ffec99;
+    border-radius: 5px;
+    background-color: #fff9db;
+    padding: 1em;
+}
+
+
+</style>
   </head>
   <body>
 
@@ -34,7 +64,7 @@
         </li>
       </ul>
       <form method="post" action="/busca" class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Buscar produto" aria-label="Buscar">
+        <input name="desc" class="form-control mr-sm-2" type="text" placeholder="Buscar produto" aria-label="Buscar">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
@@ -70,12 +100,12 @@
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" ><rect fill="#777" width="100%" height="100%"/></svg>
+        <svg class="bd-placeholder-img" width="100%" height="500px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" ><rect fill="#777" width="100%" height="100%"/></svg>
         <div class="container">
           <div class="carousel-caption text-right">
             <h1>One more for good measure.</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button"><img src="/images/corsa.jpg" style="  cursor:pointer;  max-height:400px;" onclick=" window.open('/produto/1');" /></a></p>
           </div>
         </div>
       </div>
@@ -90,11 +120,45 @@
     </a>
   </div>
 
-<h2>Produtos em Destaque<h2>
+<h2>Produtos em Destaque<h2><hr/>
 <div class="container">
+<h3 style = "color:#676A6C;"></h3>
+<div class="wrapper">
+   <div>
+    <CENTER>
+      <h4 style = "color:#676A6C;"></h3>
+        </br>
+        <img src="/images/corsa.jpg" alt="" style="padding:20px;cursor:pointer;  max-width:90%;" onclick=" window.open('/produto/1');" />  
+      </br>
+      <h4 style = "color:#676A6C;"></h4>
+      </CENTER>
+    </div>
+  
 
+  <div>
+    <CENTER>
+      <h4 style = "color:#676A6C;"></h3>
+        </br>
+        <img src="/images/corsa.jpg" alt="" style="padding:20px;cursor:pointer;  max-width:90%;" onclick=" window.open('/produto/1');" />  
+      </br>
+      <h4 style = "color:#676A6C;"></h4>
+      </CENTER>
+    </div>
+
+    <div>
+    <CENTER>
+      <h4 style = "color:#676A6C;"></h3>
+        </br>
+        <img src="/images/corsa.jpg" alt="" style="padding:20px;cursor:pointer;  max-width:90%;" onclick=" window.open('/produto/1');" />  
+      </br>
+      <h4 style = "color:#676A6C;"></h4>
+      </CENTER>
+    </div>
+
+
+  
+</div>
 <a href="/produto/1">
-<img src="/images/corsa.jpg" width="200">
 </a>
 </div>
 </main>
